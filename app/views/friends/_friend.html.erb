@@ -1,27 +1,21 @@
+<% count = 0 %>
 <div id="<%= dom_id friend %>">
-  <p>
-    <strong>First name:</strong>
-    <%= friend.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= friend.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= friend.email %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= friend.phone %>
-  </p>
-
-  <p>
-    <strong>Twitter:</strong>
-    <%= friend.twitter %>
-  </p>
-
+  <% count+=1 %>
+  <tr>
+    <td> <%= count %> </td>
+    <td><%= friend.first_name %></td>
+    <td> <%= friend.last_name %></td>
+    <td> <%= friend.email %></td>
+    <td> <%= friend.phone %></td>
+    <td> <%= friend.twitter %></td>
+    <td>
+      <%= link_to "Show", friend, class: "btn btn-outline-info btn-sm" %>
+    </td>
+    <td>
+      <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-outline-secondary btn-sm" %>
+    </td>
+    <td>
+      <%= button_to 'Remove', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %>
+    </td>
+  </tr>
 </div>
