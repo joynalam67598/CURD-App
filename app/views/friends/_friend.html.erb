@@ -4,17 +4,10 @@
     <% count+=1 %>
     <tr>
       <td> <%= count %> </td>
-      <td><%= friend.first_name %></td>
-      <td> <%= friend.last_name %></td>
+      <td><%= link_to  friend.first_name+" " + friend.last_name, friend %></td>
       <td> <%= friend.email %></td>
       <td> <%= friend.phone %></td>
       <td> <%= friend.twitter %></td>
-      <td>
-        <%= link_to "Show", friend, class: "btn btn-outline-info btn-sm" %>
-      </td>
-      <td>
-        <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-outline-secondary btn-sm" %>
-      </td>
       <td>
         <%= button_to 'Remove', friend, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger btn-sm" %>
       </td>
